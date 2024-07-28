@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photographer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="portfolio.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">IKUMI OGAWARA</div>
+        <nav>
+            <a href="#works">Works</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="https://www.instagram.com/iocameras?igsh=MWVkeWUxbWVjaWM0Ng==">Instagaram</a>
+            <a href="#contact"><strong>Contact</strong></a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CATCH THE MOMENT</h1>
+            <p>Professional Photography</p>
+        </div>
+        <div class="hero-decoration">
+            <img src="IMG_5153.JPG" alt="メインビジュアル">
+        </div>
+    </section>
+
+    <section id="works">
+        <h2 class="section-title">FEATURED WORKS</h2>
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="451832231_1370957493813652_9065703609375367187_n.jpg" alt="Work 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="IMG_5152.JPG" alt="Work 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="449115843_1142977313589710_4188828891121586621_n.jpg" alt="Work 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="IMG_5153.JPG" alt="Work 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="IMG_5075.JPG" alt="Work 5">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button prev" aria-label="Previous slide">&lt;</button>
+            <button class="carousel-button next" aria-label="Next slide">&gt;</button>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-title">PORTFOLIO</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="people">
+                <img src="D33DAC0D-AC3F-449C-8023-3CA6E5A08A7A 2.JPEG" alt="People 1">
+                <div class="portfolio-category">PEOPLE</div>
+            </div>
+            <div class="portfolio-item" data-category="people">
+                <img src="IMG_5163.JPG" alt="People 2">
+                <div class="portfolio-category">PEOPLE</div>
+            </div>
+            <div class="portfolio-item" data-category="people">
+                <img src="449115843_1142977313589710_4188828891121586621_n.jpg" alt="People 3">
+                <div class="portfolio-category">PEOPLE</div>
+            </div>
+            <div class="portfolio-item" data-category="landscape">
+                <img src="IMG_5074.JPG" alt="Landscape 1">
+                <div class="portfolio-category">LANDSCAPE</div>
+            </div>
+            <div class="portfolio-item" data-category="landscape">
+                <img src="IMG_5071.JPG" alt="Landscape 2">
+                <div class="portfolio-category">LANDSCAPE</div>
+            </div>
+            <div class="portfolio-item" data-category="landscape">
+                <img src="IMG_5077.JPG" alt="Landscape 3">
+                <div class="portfolio-category">LANDSCAPE</div>
+            </div>
+            <div class="portfolio-item" data-category="still-life">
+                <img src="IMG_5073.JPG" alt="Still Life 1">
+                <div class="portfolio-category">STILL LIFE</div>
+            </div>
+            <div class="portfolio-item" data-category="still-life">
+                <img src="IMG_5165.JPG" alt="Still Life 2">
+                <div class="portfolio-category">STILL LIFE</div>
+            </div>
+            <div class="portfolio-item" data-category="still-life">
+                <video src="IGDownloader.App_3398275820030971989 2.mov"  autoplay muted loop controls></video>
+                <div class="portfolio-category">STILL LIFE</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <!-- <div class="about-image"></div> -->
+        <div class="about-text">
+            <h2 class="section-title">ABOUT ME</h2>
+            <p><strong>大河原郁海</strong></p>
+            <p>2000年生まれ。岡山出身。神奈川で学生時代を過ごす。</p>
+            <p>4年制大学の卒業後、半年間のカナダ留学を経て、カメラへの情熱が再燃。都内のスタジオでアシスタントのアルバイトを経て、2024年東京ビジュアルアーツアカデミー写真学科写真作家コースに入学。</p>
+            <p>自然や人間の繊細な一瞬を捉え、どこかノスタルジックな雰囲気の作風を得意とする。</p>
+        </div>
+        <div class="about-visual"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">CONTACT ME</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">SEND</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ikumi Ogawara. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOMContentLoaded event fired in inline script');
+    
+            // portfolio.js内のイベントリスナーが正しく動作しているか確認
+            const nextButton = document.querySelector('.carousel-button.next');
+            const prevButton = document.querySelector('.carousel-button.prev');
+    
+            if (nextButton && prevButton) {
+                nextButton.addEventListener('click', (e) => {
+                    console.log('Next button clicked (inline)');
+                });
+    
+                prevButton.addEventListener('click', (e) => {
+                    console.log('Prev button clicked (inline)');
+                });
+    
+                console.log('Inline event listeners added');
+            } else {
+                console.error('Buttons not found (inline)');
+            }
+        });
+    </script>
+      <div id="cursor"></div>
+    </body>
+</html>

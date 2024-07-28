@@ -1,0 +1,421 @@
+:root {
+    --primary-color: #436065;
+    --secondary-color: #2c4145;
+    --accent-color: #f0f0f0;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    cursor: none;
+}
+
+
+header {
+    background-color: var(--secondary-color);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+    cursor: crosshair;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+.hero h1 {
+    position: relative;
+    font-size: 48px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    z-index: 1000;
+
+}
+
+.hero p {
+    position: relative;
+    font-size: 24px;
+    color: var(--accent-color);
+    z-index: 1000;
+
+}
+
+.hero-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+} 
+
+.hero-decoration img {
+    z-index: -1;
+ 
+}
+
+.floating-circle {
+    position: absolute;
+    top:250px;
+    right:-30px;
+    width: 350px;
+    height: 350px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    animation: float 3s infinite ease-in-out;
+    z-index: 3;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin: 80px 0 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 20px auto 0;
+}
+
+/* ... 前のスタイルは変更なし ... */
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: none;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: -40px;
+}
+
+.carousel-button.next {
+    right: -40px;
+}
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide {
+        flex: 0 0 calc(100% - 20px);
+    }
+}
+
+/* ... 以降のスタイルは変更なし ... */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-category {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgba(44,65,69,0.9);
+    font-size: 18px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-category {
+    transform: translateY(0);
+}
+
+.about {
+    background-color: var(--secondary-color);
+    padding: 40px 20px;
+}
+
+.about-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+.about-text {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.about-visual {
+    width: 180px;
+    height: 180px;
+    background-image: url("DSC01625.JPG");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+@media (max-width: 767px) {
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-text {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-text .section-title {
+        order: -3; /* ABOUT MEを最上部に */
+    }
+
+    .about-image {
+        order: -2; /* ABOUT MEの直後にプロフィール画像 */
+    }
+
+    .about-visual {
+        order: -1; /* プロフィール画像の後にビジュアル */
+    }
+
+    .about-text p {
+        order: 0; /* 全ての<p>要素をabout-visualの後に */
+    }
+}
+
+@media (min-width: 768px) {
+    .about {
+        padding: 80px 40px;
+        position: relative;
+    }
+
+    /* .about-image {
+        position: absolute;
+        left: 40px;
+        top: 80px;
+    } */
+
+    .about-text {
+        text-align: left;
+        padding-left: 160px;
+    }
+
+    .about-visual {
+        position: absolute;
+        left: 320px;
+        top: 210px;
+    }
+
+    .about-text p {
+        margin-left: 120px;
+        max-width: 380px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-visual {
+        left: 400px;
+    }
+
+    .about-text p {
+        max-width: 450px;
+    }
+}
+
+
+.contact {
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact form {
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.contact input::placeholder, .contact textarea::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.contact button {
+    width: 200px;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #ffffff;
+}
+
+#cursor{
+    transform: translate(0,0);
+    pointer-events: none;
+    position: fixed;
+    top: -4px;    
+    /* //座標調節（カーソル位置と円の中心を合わせる） */
+    left: -4px;   
+    /* //座標調節（カーソル位置と円の中心を合わせる） */
+    width: 30px;  
+     /* //カーソルの直径 */
+    height: 30px; 
+     /* //カーソルの直径 */
+    background: var(--secondary-color);
+    opacity: 0.7;
+    border-radius: 50%;
+    z-index: 999;
+    transition: width .3s, height .3s, top .3s, left .3s;
+  
+   
+}
+
+footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    cursor: none;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
